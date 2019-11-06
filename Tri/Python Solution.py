@@ -1,3 +1,4 @@
+#Note: Using eval is dangerous because it can run pretty much anything
 numbs = list(map(int,input().split(' ')))
 ops = ["+","-","/","*"]
 
