@@ -1,0 +1,8 @@
+using System;
+
+class Carrots {
+  static void Main() {
+      string[] x = Console.ReadLine().Split(' ');
+      Console.WriteLine(Convert.ToInt32(x[1]));
+  }
+}
