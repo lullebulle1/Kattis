@@ -1,20 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
+int found;
 int main() {
-    //This doesn't actually work
-    char arr[12];
-    int found;
-    
-    for (int i=1; i<6; i++) {
-        fgets(arr,12,stdin);
-        
-        if(strstr(arr,"FBI")!=NULL) {
-            printf("%i ",i);
-            found++;
-        }
-    }
+	char word[12];
+	for(int i=0; i<5; i++) {
+		scanf("%s",word);
+		if(strstr(word,"FBI")!=NULL) {
+			printf("%d ",i+1);
+			found=1;
+		}	
+	}
 
-    if(found==0) printf("HE GOT AWAY!");
-    return 0;
+	if(!found) printf("HE GOT AWAY!");
+	return 0;
 }
