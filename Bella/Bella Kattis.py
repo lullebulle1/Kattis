@@ -19,6 +19,5 @@ for i in range(0, int(array[0])*4):
         total+=10
     elif (hand[0]=="9" and hand[1]==suit):
         total+=14
-
 print(total)
         
