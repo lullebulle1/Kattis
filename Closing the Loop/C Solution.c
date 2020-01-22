@@ -4,7 +4,7 @@
 void sortArr (int arr[], int len) {
     for (int i = 0; i < len; i++) {
         for (int j = i + 1; j < len; j++) {
-            if (arr[i] > arr[j]) {
+            if (arr[i] < arr[j]) {
                 int a =  arr[i];
                 arr[i] = arr[j];
                 arr[j] = a;
@@ -13,33 +13,33 @@ void sortArr (int arr[], int len) {
     }
 }
 
-
 int main() {
-    int iterations, strings;
-    int stringLen;
+    int iterations, strings, stringLen;
     char type;
 
+    //takes in the number of cases to do
     scanf("%d",&iterations);
     
     //for each problem set
     for (int i=0; i<iterations;i++) {
+
+        //takes in the amount of data points in this case
         scanf("%d",&strings);
+        
+        //sets the two arrays and positions in array
         int bs[strings];
         int rs[strings];
+        int placeB=0;
+        int placeR=0; 
 
-        int placeB = 0;
-        int placeR = 0;
-       
         //for each data point in the line 
         for(int j=0; j<strings; j++) {
+            
+            //takes in the data point in the line
             scanf("%d%c",&stringLen,&type);
 
-            printf("*%d %d*\n",placeB,placeR);
-            printf("%c",type);
-
-            //breaks it into B's and R's and puts them into a separate 
+            //breaks it into B's and R's and puts them into a separate array
             if(type=='B') {
-                printf("Here with %d",placeB);
                 bs[placeB]=stringLen;
                 placeB++;        
             }
@@ -53,10 +53,13 @@ int main() {
         sortArr(bs,placeB);
         sortArr(rs,placeR);
 
+        //calculates the string lengths
         int totalLen=0;
-        for (int k=0;k<placeB>placeR?placeR:placeB;k++) {
+        int smaller = placeB>placeR?placeR:placeB;
+        for (int k=0;k<smaller;k++) 
             totalLen+=bs[k]+rs[k]-2;
-        }
+        
+        //prints answer
         printf("Case #%d: %d\n",i+1,totalLen);
     }    
     return 0;
