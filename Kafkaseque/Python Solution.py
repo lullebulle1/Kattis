@@ -1,15 +1,13 @@
-arr = []
+#variables
+prev = 0
+count = 1
+
+#if the next input is ever smaller, we know we need to
+#do it once more, so keeps track of that for all inputs
 for i in range(int(input())):
-    arr.append(int(input()))
-
-count = 0
-low = -1
-while (arr.count(101) != len(arr)):
-    posLow = -1
-    while(min(arr)!=101 and arr.index(min(arr))>posLow):
-        low = min(arr)
-        posLow = arr.index(low)
-        arr[posLow]=101
-
-    count+=1
+    x = int(input())
+    if(x<prev):
+        count+=1
+    
+    prev = x
 print(count)
