@@ -1,11 +1,5 @@
-totalHits = int(input())
-finalHits = totalHits
-total = 0
+x = int(input())
 hits = list(map(int,input().split(' ')))
+hits = [x for x in hits if x!=-1]
 
-for i in range(0,totalHits):
-    if (hits[i]<0):
-        finalHits-=1
-    else:
-        total+=hits[i]
-print(float(total)/finalHits)
+print(sum(hits)/len(hits))
