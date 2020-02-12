@@ -1,9 +1,13 @@
-arr = list(map(int,input().split(' '))) #hours, min
+#takes in input
+hours, minutes = list(map(int,input().split(' ')))
 
-arr[1]-=45
-#using ternarys. Probably not the best way
-arr[0] = arr[0]-1 if arr[1]<0 else arr[0]
-arr[0] = 23 if arr[0]<0 else arr[0]
-arr[1] = arr[1]+60 if arr[1]<0 else arr[1]
+#subtracts minutes
+minutes-=45
 
-print(arr[0], arr[1])
+#changes around hours and minutes to match new time
+hours = hours-1 if minutes<0 else hours
+hours = 23 if hours<0 else hours
+minutes = minutes+60 if minutes<0 else minutes
+
+#prints new time
+print(hours, minutes)

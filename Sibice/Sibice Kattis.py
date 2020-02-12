@@ -1,10 +1,8 @@
 import math
 
-array = input().split(' ')
+#calculates the hypotenuse and checks if the match falls within that
+numb, a, b = list(map(int,input().split(' ')))
+c = math.sqrt(a**2+b**2)
 
-a = int(array[1])
-b = int(array[2])
-c = math.sqrt(a*a+b*b)
-
-for i in range(0,int(array[0])):
-    print("DA" if int(input())<c else "NE")
+for i in range(0,numb):
+    print("DA" if int(input())<=c else "NE")
