@@ -4,6 +4,7 @@ import sys
 count = 1
 for line in sys.stdin:
     x = list(map(int, line.split(' ')))
+    #need to remove first element
     x.pop(0)
     a, b = min(x), max(x)
     c = b-a
