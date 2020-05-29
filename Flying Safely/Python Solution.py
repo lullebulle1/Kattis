@@ -12,5 +12,5 @@ for i in range(int(input())):
 
     print ("Recipe # {0}".format(i+1))
     for k in range(r):
-        print ("{0} {1}".format(arr[k][0], fullport * float(arr[k][2])/100))
+        print ("{0} {1:.1f}".format(arr[k][0], fullport * float(arr[k][2])/100))
     print ("-"*40)
